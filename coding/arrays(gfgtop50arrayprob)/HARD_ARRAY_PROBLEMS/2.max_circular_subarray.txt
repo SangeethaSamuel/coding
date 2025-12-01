@@ -1,0 +1,24 @@
+void sub(vector<int>&arr , int n)
+{
+  vector<int> suf(n);
+  suf[n-1]=arr[n-1];
+  suf_sum =arr[n-1];
+  for(int i=n-2;i>=0;i--)
+  {
+    suf_sum+=arr[i];
+    suf[i]=max(arr[i+1],suf_sum);
+  }
+  int currSum=0 , normalSum=0;
+  int circSum=arr[0]; 
+  int prefix =0;
+  for(int i=0;i<n;i++)
+  {
+    currSum=max(currSum+arr[i],arr[i]);
+    normalSum=max(normalSum,currSum);
+
+  prefix=prefix+arr[i];
+    circSum=max(circSum , prefix+maxsuffix[i+1])
+  }
+  return max(circSum , normalSum);
+
+}
